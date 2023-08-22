@@ -15,14 +15,16 @@
 }
 
 a {
-  font-weight: 500;
+  font-weight: 700;
   color: #ffffff;
   text-decoration: inherit;
   padding-bottom: 10px;
+  transition: 0.2s;
 }
 a:hover {
   font-size: 40px;
   color: #a782ff;
+  transition: 0.2s;
 }
 
 body {
