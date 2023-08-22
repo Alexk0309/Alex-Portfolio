@@ -5,7 +5,7 @@ const navigation = [
     title: "ABOUT",
   },
   {
-    title: "PROJECT",
+    title: "PORTFOLIO",
   },
   {
     title: "EXPERIENCE",

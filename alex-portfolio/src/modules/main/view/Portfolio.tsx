@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const Project = () => {
+const Portfolio = () => {
   return <ProjectContainer>Project</ProjectContainer>;
 };
 
-export default Project;
+export default Portfolio;
 
 const ProjectContainer = styled.div`
   height: 800px;

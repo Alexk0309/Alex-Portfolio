@@ -33,7 +33,7 @@ const AboutMe = () => {
 
           <ProfileDescriptionBioContainer>
             <ProfileDescriptionBio>
-              I am a fresh graduate student from Sunway University, Malaysia.
+              I am a computer science fresh graduate based in Kuala Lumpur, Malaysia.
               Armed with a keyboard, conjuring lines of code that dance to the
               rhythm of innovation while battling synxtax dragons or embarking
               on epic quests to find the perfect coffee blend.
@@ -59,18 +59,18 @@ const ProfileContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 50%;
+  margin-bottom: 90px;
 `;
 
 const ProfileImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  width: 450px;
 `;
 
 const ProfileImage = styled.img`
   width: 100%;
-  margin-bottom: 50px;
   border-radius: 50px;
   box-shadow: 15px 15px 40px 1px #a782ff;
 `;
