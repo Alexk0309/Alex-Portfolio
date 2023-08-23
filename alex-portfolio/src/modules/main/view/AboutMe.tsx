@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import profile from "../../../assets/images/profile.jpeg";
 import {
   Paragraph,
   ParagraphLarge,
@@ -14,27 +13,16 @@ const AboutMe = () => {
     <>
       <VideoBG />
       <AboutMeContainer>
-        <ProfileContainer>
-          <ProfileImageContainer>
-            <ProfileImage src={profile} alt="profile" />
-          </ProfileImageContainer>
-        </ProfileContainer>
-
         <ProfileDescriptionContainer>
           <ProfileDescriptionWrapper>
             <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
             <ProfileDescriptionTitle>Alex Cheah</ProfileDescriptionTitle>
 
-            <ProfileDescription>
-              A Junior{" "}
-              <ProfileDescriptionHighlight>
-                Software Engineer
-              </ProfileDescriptionHighlight>
-            </ProfileDescription>
+            <ProfileDescription>A Junior Software Engineer</ProfileDescription>
 
             <ProfileDescriptionBioContainer>
               <ProfileDescriptionBio>
-                I am a computer science fresh graduate based in Kuala Lumpur,
+                A computer science fresh graduate based in Kuala Lumpur,
                 Malaysia. Armed with a keyboard, conjuring lines of code that
                 dance to the rhythm of innovation while battling synxtax dragons
                 or embarking on epic quests to find the perfect coffee blend.
@@ -54,27 +42,8 @@ export default AboutMe;
 const AboutMeContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 800px;
-`;
-
-const ProfileContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  margin-bottom: 90px;
-`;
-
-const ProfileImageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 450px;
-`;
-
-const ProfileImage = styled.img`
-  width: 100%;
-  border-radius: 50px;
-  box-shadow: 15px 15px 40px 1px #a782ff;
 `;
 
 const ProfileDescriptionContainer = styled.div`
@@ -86,7 +55,12 @@ const ProfileDescriptionContainer = styled.div`
   width: 50%;
 `;
 
-const ProfileDescriptionWrapper = styled.div``;
+const ProfileDescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const ProfileDescriptionIntro = styled(Title2)``;
 
@@ -94,19 +68,15 @@ const ProfileDescriptionTitle = styled(Title)``;
 
 const ProfileDescription = styled(ParagraphLarge)``;
 
-const ProfileDescriptionHighlight = styled.span`
-  color: #a782ff;
-`;
-
 const ProfileDescriptionBioContainer = styled.div`
   display: flex;
+  justify-content: center;
   margin-top: 20px;
   width: auto;
 `;
 
 const ProfileDescriptionBio = styled(Paragraph)`
   text-align: justify;
-  width: 85%;
 `;
 
 const DownloadResumeButton = styled(StyledButton)`

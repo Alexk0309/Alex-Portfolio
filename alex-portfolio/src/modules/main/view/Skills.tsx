@@ -14,8 +14,8 @@ const Skills = () => {
 export default Skills;
 
 const SkillsContainer = styled.div`
-  height: 800px;
-  padding-top: 10%;
+  height: 900px;
+  padding-top: 3%;
 `;
 
 const SkillsTitleContainer = styled.div`
