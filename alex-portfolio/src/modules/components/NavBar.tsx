@@ -5,10 +5,10 @@ const navigation = [
     title: "ABOUT",
   },
   {
-    title: "PORTFOLIO",
+    title: "SKILLS",
   },
   {
-    title: "EXPERIENCE",
+    title: "PROJECTS",
   },
   {
     title: "CONTACT",

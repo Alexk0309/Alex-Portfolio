@@ -1,7 +1,7 @@
 import NavBar from "./modules/components/NavBar";
 import AboutMe from "./modules/main/view/AboutMe";
 import Experience from "./modules/main/view/Experience";
-import Portfolio from "./modules/main/view/Portfolio";
+import Portfolio from "./modules/main/view/Skills";
 
 function App() {
   return (

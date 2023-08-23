@@ -7,43 +7,45 @@ import {
   Title2,
 } from "../../components/typography/fonts";
 import { StyledButton } from "../../components/Button";
+import VideoBG from "../../components/VideoBg";
 
 const AboutMe = () => {
   return (
-    <AboutMeContainer>
-      <ProfileContainer>
-        <ProfileImageContainer>
-          <ProfileImage src={profile} alt="profile" />
-        </ProfileImageContainer>
-      </ProfileContainer>
+    <>
+      <VideoBG />
+      <AboutMeContainer>
+        <ProfileContainer>
+          <ProfileImageContainer>
+            <ProfileImage src={profile} alt="profile" />
+          </ProfileImageContainer>
+        </ProfileContainer>
 
-      <ProfileDescriptionContainer>
-        <ProfileDescriptionWrapper>
-          <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
-          <ProfileDescriptionTitle>
-            Alex Cheah Kar Sheng
-          </ProfileDescriptionTitle>
+        <ProfileDescriptionContainer>
+          <ProfileDescriptionWrapper>
+            <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
+            <ProfileDescriptionTitle>Alex Cheah</ProfileDescriptionTitle>
 
-          <ProfileDescription>
-            A Junior{" "}
-            <ProfileDescriptionHighlight>
-              Software Engineer
-            </ProfileDescriptionHighlight>
-          </ProfileDescription>
+            <ProfileDescription>
+              A Junior{" "}
+              <ProfileDescriptionHighlight>
+                Software Engineer
+              </ProfileDescriptionHighlight>
+            </ProfileDescription>
 
-          <ProfileDescriptionBioContainer>
-            <ProfileDescriptionBio>
-              I am a computer science fresh graduate based in Kuala Lumpur, Malaysia.
-              Armed with a keyboard, conjuring lines of code that dance to the
-              rhythm of innovation while battling synxtax dragons or embarking
-              on epic quests to find the perfect coffee blend.
-            </ProfileDescriptionBio>
-          </ProfileDescriptionBioContainer>
+            <ProfileDescriptionBioContainer>
+              <ProfileDescriptionBio>
+                I am a computer science fresh graduate based in Kuala Lumpur,
+                Malaysia. Armed with a keyboard, conjuring lines of code that
+                dance to the rhythm of innovation while battling synxtax dragons
+                or embarking on epic quests to find the perfect coffee blend.
+              </ProfileDescriptionBio>
+            </ProfileDescriptionBioContainer>
 
-          <DownloadResumeButton>Download Resume</DownloadResumeButton>
-        </ProfileDescriptionWrapper>
-      </ProfileDescriptionContainer>
-    </AboutMeContainer>
+            <DownloadResumeButton>Find Out More</DownloadResumeButton>
+          </ProfileDescriptionWrapper>
+        </ProfileDescriptionContainer>
+      </AboutMeContainer>
+    </>
   );
 };
 
@@ -97,12 +99,14 @@ const ProfileDescriptionHighlight = styled.span`
 `;
 
 const ProfileDescriptionBioContainer = styled.div`
-  margin-top: 50px;
-  width: 600px;
+  display: flex;
+  margin-top: 20px;
+  width: auto;
 `;
 
 const ProfileDescriptionBio = styled(Paragraph)`
   text-align: justify;
+  width: 85%;
 `;
 
 const DownloadResumeButton = styled(StyledButton)`

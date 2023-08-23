@@ -6,9 +6,9 @@
   align-items: center;
   width: 100%;
   height: 100px;
-  background-color: #1d1919;
+  background-color: #000000;
 }
-
+/* #1d1919 */
 .nav-bar-items {
   display: flex;
   height: 30px;
@@ -22,4 +22,18 @@
 
 .nav-bar-item:hover {
     border-bottom: #a782ff;
+}
+
+.video-background {
+  display: block;
+  position: absolute;
+  z-index: -999;
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
+}
+
+.profile-video {
+  object-position: 0px -90px;
+  filter: blur(5px);
 }
