@@ -1,6 +1,6 @@
 import NavBar from "./modules/components/NavBar";
 import AboutMe from "./modules/main/view/AboutMe";
-import Experience from "./modules/main/view/Experience";
+import Projects from "./modules/main/view/Projects";
 import Portfolio from "./modules/main/view/Skills";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <NavBar />
       <AboutMe />
       <Portfolio />
-      <Experience />
+      <Projects />
     </>
   );
 }
