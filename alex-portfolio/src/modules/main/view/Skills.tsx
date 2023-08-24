@@ -24,5 +24,5 @@ const SkillsTitleContainer = styled.div`
 `;
 
 const SkillsTitle = styled(Title)`
-  font-size: 80px;
+  font-size: 100px;
 `;

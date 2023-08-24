@@ -1,39 +1,34 @@
 import styled from "styled-components";
-import {
-  Paragraph,
-  ParagraphLarge,
-  Title,
-  Title2,
-} from "../../components/typography/fonts";
+import { Paragraph, Title } from "../../components/typography/fonts";
+import profileImg from "../../../assets/images/Profile.jpeg";
 import { StyledButton } from "../../components/Button";
-import VideoBG from "../../components/VideoBg";
 
 const AboutMe = () => {
   return (
-    <>
-      <VideoBG />
-      <AboutMeContainer>
-        <ProfileDescriptionContainer>
-          <ProfileDescriptionWrapper>
-            <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
-            <ProfileDescriptionTitle>Alex Cheah</ProfileDescriptionTitle>
+    <AboutMeContainer>
+      <ProfilePictureContainer>
+        <ProfilePictureWrapper>
+          <ProfilePicture src={profileImg} />
+        </ProfilePictureWrapper>
+      </ProfilePictureContainer>
 
-            <ProfileDescription>A Junior Software Engineer</ProfileDescription>
-
-            <ProfileDescriptionBioContainer>
-              <ProfileDescriptionBio>
-                A computer science fresh graduate based in Kuala Lumpur,
-                Malaysia. Armed with a keyboard, conjuring lines of code that
-                dance to the rhythm of innovation while battling synxtax dragons
-                or embarking on epic quests to find the perfect coffee blend.
-              </ProfileDescriptionBio>
-            </ProfileDescriptionBioContainer>
-
-            <DownloadResumeButton>Find Out More</DownloadResumeButton>
-          </ProfileDescriptionWrapper>
-        </ProfileDescriptionContainer>
-      </AboutMeContainer>
-    </>
+      <ProfileDescriptionContainer>
+        <ProfileDescriptionWrapper>
+          <AboutMeTitleContainer>
+            <AboutMeTitle>About me</AboutMeTitle>
+          </AboutMeTitleContainer>
+          <ProfileDescriptionBioContainer>
+            <ProfileDescriptionBio>
+              A computer science fresh graduate based in Kuala Lumpur, Malaysia.
+              Armed with a keyboard, conjuring lines of code that dance to the
+              rhythm of innovation while battling synxtax dragons or embarking
+              on epic quests to find the perfect coffee blend.
+            </ProfileDescriptionBio>
+          </ProfileDescriptionBioContainer>
+          <DownloadResumeButton>Download Resume</DownloadResumeButton>
+        </ProfileDescriptionWrapper>
+      </ProfileDescriptionContainer>
+    </AboutMeContainer>
   );
 };
 
@@ -43,40 +38,64 @@ const AboutMeContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 800px;
+  height: 700px;
+
+  align-items: center;
+  padding-top: 50px;
+`;
+
+const ProfilePictureContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  margin-bottom: 90px;
+`;
+
+const ProfilePictureWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 450px;
+
+  align-items: center;
+`;
+
+const ProfilePicture = styled.img`
+  width: 100%;
+  border-radius: 40px;
 `;
 
 const ProfileDescriptionContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  margin-left: 50px;
-  margin-bottom: 100px;
-  width: 50%;
-`;
+  width: 45%;
+  height: 100%;
 
+  margin-bottom: 90px;
+  align-items: center;
+  padding: 0 10px 0 20px;
+`;
 const ProfileDescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 70%;
 `;
-
-const ProfileDescriptionIntro = styled(Title2)``;
-
-const ProfileDescriptionTitle = styled(Title)``;
-
-const ProfileDescription = styled(ParagraphLarge)``;
 
 const ProfileDescriptionBioContainer = styled.div`
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
   width: auto;
+
+  align-items: center;
 `;
 
 const ProfileDescriptionBio = styled(Paragraph)`
   text-align: justify;
+`;
+
+const AboutMeTitleContainer = styled.div``;
+
+const AboutMeTitle = styled(Title)`
+  font-size: 100px;
 `;
 
 const DownloadResumeButton = styled(StyledButton)`
