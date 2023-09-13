@@ -8,7 +8,7 @@ const navigation = [
     title: "SKILLS",
   },
   {
-    title: "PROJECTS",
+    title: "EXPERIENCE",
   },
   {
     title: "CONTACT",

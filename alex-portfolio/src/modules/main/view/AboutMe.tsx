@@ -17,6 +17,7 @@ const AboutMe = () => {
           <AboutMeTitleContainer>
             <AboutMeTitle>About me</AboutMeTitle>
           </AboutMeTitleContainer>
+
           <ProfileDescriptionBioContainer>
             <ProfileDescriptionBio>
               A computer science fresh graduate based in Kuala Lumpur, Malaysia.
@@ -25,6 +26,7 @@ const AboutMe = () => {
               on epic quests to find the perfect coffee blend.
             </ProfileDescriptionBio>
           </ProfileDescriptionBioContainer>
+
           <DownloadResumeButton>Download Resume</DownloadResumeButton>
         </ProfileDescriptionWrapper>
       </ProfileDescriptionContainer>

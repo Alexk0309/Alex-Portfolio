@@ -7,7 +7,7 @@ interface IButtonprops {
 
 const Button: FC<IButtonprops> = (props) => {
   const { children } = props;
-  return <StyledButton className="styled-button">{children}</StyledButton>;
+  return <StyledButton>{children}</StyledButton>;
 };
 
 export const StyledButton = styled.button`
