@@ -1,8 +1,8 @@
 import NavBar from "./modules/components/NavBar";
 import AboutMe from "./modules/main/view/AboutMe";
 import Home from "./modules/main/view/Home";
-import Projects from "./modules/main/view/Projects";
-import Portfolio from "./modules/main/view/Skills";
+import Experience from "./modules/main/view/Experience";
+import Skills from "./modules/main/view/Skills";
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <NavBar />
       <Home />
       <AboutMe />
-      <Portfolio />
-      <Projects />
+      <Skills />
+      <Experience />
     </>
   );
 }

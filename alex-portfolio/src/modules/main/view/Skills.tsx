@@ -27,7 +27,7 @@ const Skills = () => {
           </SkillsSection>
           <SkillsSection>
             <SkillIcon img={frontendImg} />
-            <SkillsSectionTitle>Front End</SkillsSectionTitle>
+            <SkillsSectionTitle>Frontend</SkillsSectionTitle>
             <SkillsList>
               {FRONTEND.map((skill: string) => {
                 return <SkillsText>{skill}</SkillsText>;
@@ -36,7 +36,7 @@ const Skills = () => {
           </SkillsSection>
           <SkillsSection>
             <SkillIcon img={backendImg} />
-            <SkillsSectionTitle>Back End</SkillsSectionTitle>
+            <SkillsSectionTitle>Backend</SkillsSectionTitle>
             <SkillsList>
               {BACKEND.map((skill: string) => {
                 return <SkillsText>{skill}</SkillsText>;
