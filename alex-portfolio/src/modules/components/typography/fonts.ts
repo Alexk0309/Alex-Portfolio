@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-  font-size: 50px;
+  font-size: 120px;
   font-weight: bold;
-  line-height: 40px;
+  line-height: 10px;
 `;
 
 export const Title2 = styled.h1`
@@ -13,7 +13,7 @@ export const Title2 = styled.h1`
 `;
 
 export const ParagraphLarge = styled.h2`
-  font-size: 30px;
+  font-size: 40px;
   line-height: 11px;
 `;
 

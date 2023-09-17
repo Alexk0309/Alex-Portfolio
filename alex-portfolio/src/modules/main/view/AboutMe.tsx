@@ -1,39 +1,26 @@
 import styled from "styled-components";
-import profile from "../../../assets/images/profile.jpeg";
-import {
-  Paragraph,
-  ParagraphLarge,
-  Title,
-  Title2,
-} from "../../components/typography/fonts";
+import { Paragraph, Title } from "../../components/typography/fonts";
+import profileImg from "../../../assets/images/Profile.jpeg";
 import { StyledButton } from "../../components/Button";
 
 const AboutMe = () => {
   return (
     <AboutMeContainer>
-      <ProfileContainer>
-        <ProfileImageContainer>
-          <ProfileImage src={profile} alt="profile" />
-        </ProfileImageContainer>
-      </ProfileContainer>
+      <ProfilePictureContainer>
+        <ProfilePictureWrapper>
+          <ProfilePicture src={profileImg} />
+        </ProfilePictureWrapper>
+      </ProfilePictureContainer>
 
       <ProfileDescriptionContainer>
         <ProfileDescriptionWrapper>
-          <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
-          <ProfileDescriptionTitle>
-            Alex Cheah Kar Sheng
-          </ProfileDescriptionTitle>
-
-          <ProfileDescription>
-            A Junior{" "}
-            <ProfileDescriptionHighlight>
-              Software Engineer
-            </ProfileDescriptionHighlight>
-          </ProfileDescription>
+          <AboutMeTitleContainer>
+            <AboutMeTitle>About me</AboutMeTitle>
+          </AboutMeTitleContainer>
 
           <ProfileDescriptionBioContainer>
             <ProfileDescriptionBio>
-              I am a computer science fresh graduate based in Kuala Lumpur, Malaysia.
+              A computer science fresh graduate based in Kuala Lumpur, Malaysia.
               Armed with a keyboard, conjuring lines of code that dance to the
               rhythm of innovation while battling synxtax dragons or embarking
               on epic quests to find the perfect coffee blend.
@@ -52,57 +39,65 @@ export default AboutMe;
 const AboutMeContainer = styled.div`
   display: flex;
   flex-direction: row;
-  height: 800px;
+  justify-content: center;
+  height: 700px;
+
+  align-items: center;
+  padding-top: 50px;
 `;
 
-const ProfileContainer = styled.div`
+const ProfilePictureContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 40%;
+  height: 100%;
   margin-bottom: 90px;
 `;
 
-const ProfileImageContainer = styled.div`
+const ProfilePictureWrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 450px;
+
+  align-items: center;
 `;
 
-const ProfileImage = styled.img`
+const ProfilePicture = styled.img`
   width: 100%;
-  border-radius: 50px;
-  box-shadow: 15px 15px 40px 1px #a782ff;
+  border-radius: 40px;
 `;
 
 const ProfileDescriptionContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  margin-left: 50px;
-  margin-bottom: 100px;
-  width: 50%;
+  width: 45%;
+  height: 100%;
+
+  margin-bottom: 90px;
+  align-items: center;
+  padding: 0 10px 0 20px;
 `;
-
-const ProfileDescriptionWrapper = styled.div``;
-
-const ProfileDescriptionIntro = styled(Title2)``;
-
-const ProfileDescriptionTitle = styled(Title)``;
-
-const ProfileDescription = styled(ParagraphLarge)``;
-
-const ProfileDescriptionHighlight = styled.span`
-  color: #a782ff;
+const ProfileDescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 70%;
 `;
 
 const ProfileDescriptionBioContainer = styled.div`
-  margin-top: 50px;
-  width: 600px;
+  display: flex;
+  width: auto;
+
+  align-items: center;
 `;
 
 const ProfileDescriptionBio = styled(Paragraph)`
   text-align: justify;
+`;
+
+const AboutMeTitleContainer = styled.div``;
+
+const AboutMeTitle = styled(Title)`
+  font-size: 100px;
 `;
 
 const DownloadResumeButton = styled(StyledButton)`

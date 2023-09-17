@@ -1,14 +1,16 @@
 import NavBar from "./modules/components/NavBar";
 import AboutMe from "./modules/main/view/AboutMe";
+import Home from "./modules/main/view/Home";
 import Experience from "./modules/main/view/Experience";
-import Portfolio from "./modules/main/view/Portfolio";
+import Skills from "./modules/main/view/Skills";
 
 function App() {
   return (
     <>
       <NavBar />
+      <Home />
       <AboutMe />
-      <Portfolio />
+      <Skills />
       <Experience />
     </>
   );
