@@ -40,7 +40,7 @@ const CardContainer = styled.div`
   display: flex;
   border-radius: 10px;
   flex-direction: column;
-  width: 20%;
+  width: 300px;
   background-color: #1c1c1c;
   &:hover {
     background-color: #3a3a3a;
