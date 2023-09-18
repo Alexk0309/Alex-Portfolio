@@ -20,8 +20,8 @@ const Skills = () => {
             <SkillIcon img={codingImg} />
             <SkillsSectionTitle>Languages</SkillsSectionTitle>
             <SkillsList>
-              {LANGUAGES.map((skill: string) => {
-                return <SkillsText>{skill}</SkillsText>;
+              {LANGUAGES.map((skill: string, index) => {
+                return <SkillsText key={index}>{skill}</SkillsText>;
               })}
             </SkillsList>
           </SkillsSection>
@@ -29,8 +29,8 @@ const Skills = () => {
             <SkillIcon img={frontendImg} />
             <SkillsSectionTitle>Frontend</SkillsSectionTitle>
             <SkillsList>
-              {FRONTEND.map((skill: string) => {
-                return <SkillsText>{skill}</SkillsText>;
+              {FRONTEND.map((skill: string, index) => {
+                return <SkillsText key={index}>{skill}</SkillsText>;
               })}
             </SkillsList>
           </SkillsSection>
@@ -38,8 +38,8 @@ const Skills = () => {
             <SkillIcon img={backendImg} />
             <SkillsSectionTitle>Backend</SkillsSectionTitle>
             <SkillsList>
-              {BACKEND.map((skill: string) => {
-                return <SkillsText>{skill}</SkillsText>;
+              {BACKEND.map((skill: string, index) => {
+                return <SkillsText key={index}>{skill}</SkillsText>;
               })}
             </SkillsList>
           </SkillsSection>

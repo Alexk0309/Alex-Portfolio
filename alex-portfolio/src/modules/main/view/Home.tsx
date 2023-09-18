@@ -17,7 +17,7 @@ const Home = () => {
             <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
             <ProfileDescriptionTitle>Alex Cheah</ProfileDescriptionTitle>
 
-            <ProfileDescription>Unemployed</ProfileDescription>
+            <ProfileDescription>Full Stack Software Engineer</ProfileDescription>
 
             <FindOutMoreButton>Find Out More</FindOutMoreButton>
           </ProfileDescriptionWrapper>
