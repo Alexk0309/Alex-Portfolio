@@ -21,7 +21,7 @@ const NavBar = () => {
       <div className="nav-bar-items">
         {navigation.map((item, index) => (
           <div key={index} className="nav-bar-item">
-            <a href="#">{item.title}</a>
+            <a id="nav-bar-link" href="#">{item.title}</a>
           </div>
         ))}
       </div>

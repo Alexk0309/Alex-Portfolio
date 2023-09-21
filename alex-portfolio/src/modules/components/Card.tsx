@@ -26,6 +26,7 @@ const Card: FC<CardProps> = (props) => {
         <CardImageWrapper>
           <CardImage src={img} alt={title} />
         </CardImageWrapper>
+
         <CardInfo>
           <CardTitle>
             <CardTitleText>{title}</CardTitleText>
@@ -35,15 +36,19 @@ const Card: FC<CardProps> = (props) => {
           </CardCompany>
           <CardCompanyDurationWrapper>
             <CardCompanyDurationText>
-              {startDate}-{endDate}
+              {startDate} - {endDate}
             </CardCompanyDurationText>
           </CardCompanyDurationWrapper>
         </CardInfo>
+        
       </CardHeader>
       <CardBody $showContent={showContent}>
         <CardDescriptionWrapper>
           <CardDescriptionText>{desc}</CardDescriptionText>
         </CardDescriptionWrapper>
+        <LearnMoreLinkWrapper>
+          <LearnMoreLink>Learn more</LearnMoreLink>
+        </LearnMoreLinkWrapper>
       </CardBody>
     </CardContainer>
   );
@@ -61,7 +66,7 @@ const CardHeader = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 10px 10px 10px;
   border-radius: 10px;
 
   background-color: #1c1c1c;
@@ -69,7 +74,6 @@ const CardHeader = styled.div`
   transition: all 0.2s;
 
   &:hover {
-    background-color: #3a3a3a;
     cursor: pointer;
   }
 `;
@@ -106,27 +110,51 @@ const CardCompanyText = styled(Paragraph)`
 const CardCompanyDurationWrapper = styled.div``;
 
 const CardCompanyDurationText = styled.p`
+  font-style: italic;
   margin: 0;
 `;
 
 const CardBody = styled.div<{ $showContent?: boolean }>`
   display: block;
-  position: relative;
-  bottom: 7px;
-  display: ${({ $showContent }) => ($showContent ? "flex" : "none")};
   justify-content: center;
+  flex-direction: column;
+  position: relative;
   padding: 10px;
-  border-radius: 0 0 10px 10px;
 
   background-color: #1c1c1c;
+
+  max-height: ${({ $showContent }) => ($showContent ? "500px" : 0)};
+  bottom: 7px;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 `;
 
 const CardDescriptionWrapper = styled.div`
   width: 90%;
+  margin-top: 10px;
+  margin-left: 30px;
 `;
 
 const CardDescriptionText = styled(Paragraph)`
   font-size: 17px;
   word-wrap: break-word;
   margin: 0;
+  margin-right: 10px;
+`;
+
+const LearnMoreLinkWrapper = styled.div`
+  display: flex;
+  width: 95%;
+  margin-top: 10px;
+  justify-content: end;
+`;
+
+const LearnMoreLink = styled.a`
+  font-weight: 300;
+  cursor: pointer;
+
+  &:hover {
+    color: #c9c9c9;
+  }
 `;

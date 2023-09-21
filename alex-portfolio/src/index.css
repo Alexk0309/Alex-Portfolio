@@ -21,7 +21,8 @@ a {
   padding-bottom: 10px;
   transition: 0.2s;
 }
-a:hover {
+
+#nav-bar-link:hover {
   font-size: 40px;
   transition: 0.2s;
 }

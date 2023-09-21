@@ -3,7 +3,6 @@ import { Title } from "../../components/typography/fonts";
 import Card from "../../components/Card";
 
 const Experience = () => {
-
   return (
     <ExperienceContainer>
       <ExperienceTitleContainer>
@@ -14,7 +13,15 @@ const Experience = () => {
           img="https://yt3.googleusercontent.com/yjmt_YIUEIyBdjmtxxybh1qHi7hWQRWBVcoAYjXBId0Tu2T2WclKtHhdrLA01xVArJDbBapC=s900-c-k-c0x00ffffff-no-rj"
           title="Mobile Engineer Intern"
           company="MoneyLion"
-          desc="I worked here before lol dfiwndiw nownwofnofnwofnwo fwiofwoifnofno o fwoif oiwnfoiwnfow"
+          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id blandit mi, at eleifend odio. Sed vitae turpis sit amet nibh vestibulum faucibus. Nullam pellentesque quis nibh at tempus. Nulla facilisi. Aenean luctus hendrerit rhoncus. Pellentesque ultricies urna eu imperdiet egestas. Maecenas elementum lacus non lorem gravida, nec mattis erat facilisis. Vestibulum eleifend aliquet lectus eget facilisis. Donec rhoncus dui id laoreet varius."
+          startDate="12/2022"
+          endDate="Present"
+        />
+        <ExperienceCard
+          img="https://yt3.googleusercontent.com/yjmt_YIUEIyBdjmtxxybh1qHi7hWQRWBVcoAYjXBId0Tu2T2WclKtHhdrLA01xVArJDbBapC=s900-c-k-c0x00ffffff-no-rj"
+          title="Mobile Engineer Intern"
+          company="MoneyLion"
+          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id blandit mi, at eleifend odio. Sed vitae turpis sit amet nibh vestibulum faucibus. Nullam pellentesque quis nibh at tempus. Nulla facilisi. Aenean luctus hendrerit rhoncus. Pellentesque ultricies urna eu imperdiet egestas. Maecenas elementum lacus non lorem gravida, nec mattis erat facilisis. Vestibulum eleifend aliquet lectus eget facilisis. Donec rhoncus dui id laoreet varius."
           startDate="2022"
           endDate="2023"
         />
@@ -22,15 +29,7 @@ const Experience = () => {
           img="https://yt3.googleusercontent.com/yjmt_YIUEIyBdjmtxxybh1qHi7hWQRWBVcoAYjXBId0Tu2T2WclKtHhdrLA01xVArJDbBapC=s900-c-k-c0x00ffffff-no-rj"
           title="Mobile Engineer Intern"
           company="MoneyLion"
-          desc="I worked here before lol dfiwndiw nownwofnofnwofnwo fwiofwoifnofno o fwoif oiwnfoiwnfow"
-          startDate="2022"
-          endDate="2023"
-        />
-        <ExperienceCard
-          img="https://yt3.googleusercontent.com/yjmt_YIUEIyBdjmtxxybh1qHi7hWQRWBVcoAYjXBId0Tu2T2WclKtHhdrLA01xVArJDbBapC=s900-c-k-c0x00ffffff-no-rj"
-          title="Mobile Engineer Intern"
-          company="MoneyLion"
-          desc="I worked here before lol dfiwndiw nownwofnofnwofnwo fwiofwoifnofno o fwoif oiwnfoiwnfow"
+          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id blandit mi, at eleifend odio. Sed vitae turpis sit amet nibh vestibulum faucibus. Nullam pellentesque quis nibh at tempus. Nulla facilisi. Aenean luctus hendrerit rhoncus. Pellentesque ultricies urna eu imperdiet egestas. Maecenas elementum lacus non lorem gravida, nec mattis erat facilisis. Vestibulum eleifend aliquet lectus eget facilisis. Donec rhoncus dui id laoreet varius."
           startDate="2022"
           endDate="2023"
         />
