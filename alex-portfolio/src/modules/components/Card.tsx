@@ -2,17 +2,18 @@ import { FC, useState } from "react";
 import styled from "styled-components";
 import { Paragraph } from "./typography/fonts";
 
-interface CardProps {
+export interface Experience {
   img: string;
   title: string;
   company: string;
-  desc: string;
+  description: string;
   startDate: string;
   endDate: string;
+  link: string;
 }
 
-const Card: FC<CardProps> = (props) => {
-  const { img, title, company, desc, startDate, endDate } = props;
+const Card: FC<Experience> = (props) => {
+  const { img, title, company, description, startDate, endDate, link } = props;
 
   const [showContent, setShowContent] = useState(false);
 
@@ -40,14 +41,13 @@ const Card: FC<CardProps> = (props) => {
             </CardCompanyDurationText>
           </CardCompanyDurationWrapper>
         </CardInfo>
-        
       </CardHeader>
       <CardBody $showContent={showContent}>
         <CardDescriptionWrapper>
-          <CardDescriptionText>{desc}</CardDescriptionText>
+          <CardDescriptionText>{description}</CardDescriptionText>
         </CardDescriptionWrapper>
         <LearnMoreLinkWrapper>
-          <LearnMoreLink>Learn more</LearnMoreLink>
+          <LearnMoreLink href={link}>Learn more</LearnMoreLink>
         </LearnMoreLinkWrapper>
       </CardBody>
     </CardContainer>

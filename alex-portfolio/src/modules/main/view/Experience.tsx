@@ -1,38 +1,38 @@
 import styled from "styled-components";
 import { Title } from "../../components/typography/fonts";
-import Card from "../../components/Card";
+import Card, { Experience } from "../../components/Card";
+import { useQuery } from "react-query";
+import { getExperiences } from "../../../api";
 
 const Experience = () => {
+  const { data } = useQuery({
+    queryKey: ["get_experiences"],
+    queryFn: () => getExperiences(),
+  });
+
+  const experiences = data?.results;
+
   return (
     <ExperienceContainer>
       <ExperienceTitleContainer>
         <ExperienceTitle>Work Experience</ExperienceTitle>
       </ExperienceTitleContainer>
       <ExperienceCardContainer>
-        <ExperienceCard
-          img="https://yt3.googleusercontent.com/yjmt_YIUEIyBdjmtxxybh1qHi7hWQRWBVcoAYjXBId0Tu2T2WclKtHhdrLA01xVArJDbBapC=s900-c-k-c0x00ffffff-no-rj"
-          title="Mobile Engineer Intern"
-          company="MoneyLion"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id blandit mi, at eleifend odio. Sed vitae turpis sit amet nibh vestibulum faucibus. Nullam pellentesque quis nibh at tempus. Nulla facilisi. Aenean luctus hendrerit rhoncus. Pellentesque ultricies urna eu imperdiet egestas. Maecenas elementum lacus non lorem gravida, nec mattis erat facilisis. Vestibulum eleifend aliquet lectus eget facilisis. Donec rhoncus dui id laoreet varius."
-          startDate="12/2022"
-          endDate="Present"
-        />
-        <ExperienceCard
-          img="https://yt3.googleusercontent.com/yjmt_YIUEIyBdjmtxxybh1qHi7hWQRWBVcoAYjXBId0Tu2T2WclKtHhdrLA01xVArJDbBapC=s900-c-k-c0x00ffffff-no-rj"
-          title="Mobile Engineer Intern"
-          company="MoneyLion"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id blandit mi, at eleifend odio. Sed vitae turpis sit amet nibh vestibulum faucibus. Nullam pellentesque quis nibh at tempus. Nulla facilisi. Aenean luctus hendrerit rhoncus. Pellentesque ultricies urna eu imperdiet egestas. Maecenas elementum lacus non lorem gravida, nec mattis erat facilisis. Vestibulum eleifend aliquet lectus eget facilisis. Donec rhoncus dui id laoreet varius."
-          startDate="2022"
-          endDate="2023"
-        />
-        <ExperienceCard
-          img="https://yt3.googleusercontent.com/yjmt_YIUEIyBdjmtxxybh1qHi7hWQRWBVcoAYjXBId0Tu2T2WclKtHhdrLA01xVArJDbBapC=s900-c-k-c0x00ffffff-no-rj"
-          title="Mobile Engineer Intern"
-          company="MoneyLion"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id blandit mi, at eleifend odio. Sed vitae turpis sit amet nibh vestibulum faucibus. Nullam pellentesque quis nibh at tempus. Nulla facilisi. Aenean luctus hendrerit rhoncus. Pellentesque ultricies urna eu imperdiet egestas. Maecenas elementum lacus non lorem gravida, nec mattis erat facilisis. Vestibulum eleifend aliquet lectus eget facilisis. Donec rhoncus dui id laoreet varius."
-          startDate="2022"
-          endDate="2023"
-        />
+        {experiences?.map((item: Experience) => {
+          const { title, company, description, startDate, endDate, img, link } =
+            item;
+          return (
+            <ExperienceCard
+              img={img}
+              title={title}
+              company={company}
+              description={description}
+              startDate={startDate}
+              endDate={endDate}
+              link={link}
+            />
+          );
+        })}
       </ExperienceCardContainer>
     </ExperienceContainer>
   );
