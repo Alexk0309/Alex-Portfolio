@@ -48,7 +48,7 @@ const Card: FC<Experience> = (props) => {
           <CardDescriptionText>{description}</CardDescriptionText>
         </CardDescriptionWrapper>
         <LearnMoreLinkWrapper>
-          <LearnMoreLink href={link}>Learn more</LearnMoreLink>
+          <LearnMoreLink href={link} target="_blank">Learn more</LearnMoreLink>
         </LearnMoreLinkWrapper>
       </CardBody>
     </CardContainer>
