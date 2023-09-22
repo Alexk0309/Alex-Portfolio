@@ -9,7 +9,7 @@ import { BACKEND, FRONTEND, LANGUAGES } from "../../../constants/skills";
 
 const Skills = () => {
   return (
-    <SkillsContainer>
+    <SkillsContainer id="skills">
       <SkillsTitleContainer>
         <SkillsTitle>My Skills</SkillsTitle>
       </SkillsTitleContainer>
@@ -53,7 +53,7 @@ export default Skills;
 
 const SkillsContainer = styled.div`
   height: 900px;
-  padding-top: 3%;
+  padding-top: 7%;
   background-color: #111010;
 `;
 

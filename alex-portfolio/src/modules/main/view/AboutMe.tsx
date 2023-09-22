@@ -15,7 +15,7 @@ const AboutMe = () => {
   };
 
   return (
-    <AboutMeContainer>
+    <AboutMeContainer id="about-me">
       <ProfilePictureContainer>
         <ProfilePictureWrapper>
           <ProfilePicture src={profileImg} />
@@ -55,7 +55,7 @@ const AboutMeContainer = styled.div`
   height: 700px;
 
   align-items: center;
-  padding-top: 50px;
+  padding-top: 10%;
 `;
 
 const ProfilePictureContainer = styled.div`

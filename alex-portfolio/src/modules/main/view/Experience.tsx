@@ -13,7 +13,7 @@ const Experience = () => {
   const experiences = data?.results;
 
   return (
-    <ExperienceContainer>
+    <ExperienceContainer id="experience">
       <ExperienceTitleContainer>
         <ExperienceTitle>Work Experience</ExperienceTitle>
       </ExperienceTitleContainer>

@@ -8,6 +8,14 @@ import { StyledButton } from "../../components/Button";
 import VideoBG from "../../components/VideoBg";
 
 const Home = () => {
+  const findOutMore = () => {
+    const link = document.createElement('a');
+    link.href = "#about-me"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <>
       <VideoBG />
@@ -17,7 +25,7 @@ const Home = () => {
             <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
             <ProfileDescriptionTitle>Alex Cheah</ProfileDescriptionTitle>
             <ProfileDescription>Software Engineer</ProfileDescription>
-            <FindOutMoreButton>Find Out More</FindOutMoreButton>
+            <FindOutMoreButton onClick={findOutMore}>Find Out More</FindOutMoreButton>
           </ProfileDescriptionWrapper>
         </ProfileDescriptionContainer>
       </HomeContainer>
