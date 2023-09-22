@@ -6,45 +6,48 @@ import codingImg from "../../../assets/images/coding.png";
 import frontendImg from "../../../assets/images/frontend.png";
 import backendImg from "../../../assets/images/backend.png";
 import { BACKEND, FRONTEND, LANGUAGES } from "../../../constants/skills";
+import { Slide } from "react-awesome-reveal";
 
 const Skills = () => {
   return (
     <SkillsContainer id="skills">
-      <SkillsTitleContainer>
-        <SkillsTitle>My Skills</SkillsTitle>
-      </SkillsTitleContainer>
+      <Slide triggerOnce>
+        <SkillsTitleContainer>
+          <SkillsTitle>My Skills</SkillsTitle>
+        </SkillsTitleContainer>
 
-      <SkillsToolContainer>
-        <SkillsToolWrapper>
-          <SkillsSection>
-            <SkillIcon img={codingImg} />
-            <SkillsSectionTitle>Languages</SkillsSectionTitle>
-            <SkillsList>
-              {LANGUAGES.map((skill: string, index) => {
-                return <SkillsText key={index}>{skill}</SkillsText>;
-              })}
-            </SkillsList>
-          </SkillsSection>
-          <SkillsSection>
-            <SkillIcon img={frontendImg} />
-            <SkillsSectionTitle>Frontend</SkillsSectionTitle>
-            <SkillsList>
-              {FRONTEND.map((skill: string, index) => {
-                return <SkillsText key={index}>{skill}</SkillsText>;
-              })}
-            </SkillsList>
-          </SkillsSection>
-          <SkillsSection>
-            <SkillIcon img={backendImg} />
-            <SkillsSectionTitle>Backend</SkillsSectionTitle>
-            <SkillsList>
-              {BACKEND.map((skill: string, index) => {
-                return <SkillsText key={index}>{skill}</SkillsText>;
-              })}
-            </SkillsList>
-          </SkillsSection>
-        </SkillsToolWrapper>
-      </SkillsToolContainer>
+        <SkillsToolContainer>
+          <SkillsToolWrapper>
+            <SkillsSection>
+              <SkillIcon img={codingImg} />
+              <SkillsSectionTitle>Languages</SkillsSectionTitle>
+              <SkillsList>
+                {LANGUAGES.map((skill: string, index) => {
+                  return <SkillsText key={index}>{skill}</SkillsText>;
+                })}
+              </SkillsList>
+            </SkillsSection>
+            <SkillsSection>
+              <SkillIcon img={frontendImg} />
+              <SkillsSectionTitle>Frontend</SkillsSectionTitle>
+              <SkillsList>
+                {FRONTEND.map((skill: string, index) => {
+                  return <SkillsText key={index}>{skill}</SkillsText>;
+                })}
+              </SkillsList>
+            </SkillsSection>
+            <SkillsSection>
+              <SkillIcon img={backendImg} />
+              <SkillsSectionTitle>Backend</SkillsSectionTitle>
+              <SkillsList>
+                {BACKEND.map((skill: string, index) => {
+                  return <SkillsText key={index}>{skill}</SkillsText>;
+                })}
+              </SkillsList>
+            </SkillsSection>
+          </SkillsToolWrapper>
+        </SkillsToolContainer>
+      </Slide>
     </SkillsContainer>
   );
 };
@@ -88,6 +91,8 @@ const SkillsToolWrapper = styled.div`
   align-items: center;
   background-color: #000000;
   border-radius: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 `;
 
 const SkillsSectionTitle = styled(Paragraph)`

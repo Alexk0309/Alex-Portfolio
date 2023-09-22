@@ -3,6 +3,7 @@ import { Title } from "../../components/typography/fonts";
 import Card, { Experience } from "../../components/Card";
 import { useQuery } from "react-query";
 import { getExperiences } from "../../../api";
+import { Slide } from "react-awesome-reveal";
 
 const Experience = () => {
   const { data } = useQuery({
@@ -13,29 +14,38 @@ const Experience = () => {
   const experiences = data?.results;
 
   return (
-    <ExperienceContainer id="experience">
-      <ExperienceTitleContainer>
-        <ExperienceTitle>Work Experience</ExperienceTitle>
-      </ExperienceTitleContainer>
-      <ExperienceCardContainer>
-        {experiences?.map((item: Experience, index: number) => {
-          const { title, company, description, startDate, endDate, img, link } =
-            item;
-          return (
-            <ExperienceCard
-              key={index}
-              img={img}
-              title={title}
-              company={company}
-              description={description}
-              startDate={startDate}
-              endDate={endDate}
-              link={link}
-            />
-          );
-        })}
-      </ExperienceCardContainer>
-    </ExperienceContainer>
+    <Slide direction="right" triggerOnce>
+      <ExperienceContainer id="experience">
+        <ExperienceTitleContainer>
+          <ExperienceTitle>Work Experience</ExperienceTitle>
+        </ExperienceTitleContainer>
+        <ExperienceCardContainer>
+          {experiences?.map((item: Experience, index: number) => {
+            const {
+              title,
+              company,
+              description,
+              startDate,
+              endDate,
+              img,
+              link,
+            } = item;
+            return (
+              <ExperienceCard
+                key={index}
+                img={img}
+                title={title}
+                company={company}
+                description={description}
+                startDate={startDate}
+                endDate={endDate}
+                link={link}
+              />
+            );
+          })}
+        </ExperienceCardContainer>
+      </ExperienceContainer>
+    </Slide>
   );
 };
 

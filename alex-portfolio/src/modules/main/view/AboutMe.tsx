@@ -3,6 +3,7 @@ import { Paragraph, Title } from "../../components/typography/fonts";
 import profileImg from "../../../assets/images/Profile.jpeg";
 import { StyledButton } from "../../components/Button";
 import resume from "../../../assets/CheahKarSheng.pdf";
+import { Slide } from "react-awesome-reveal";
 
 const AboutMe = () => {
   const downloadFile = async () => {
@@ -15,34 +16,36 @@ const AboutMe = () => {
   };
 
   return (
-    <AboutMeContainer id="about-me">
-      <ProfilePictureContainer>
-        <ProfilePictureWrapper>
-          <ProfilePicture src={profileImg} />
-        </ProfilePictureWrapper>
-      </ProfilePictureContainer>
+    <Slide direction="right" triggerOnce>
+      <AboutMeContainer id="about-me">
+        <ProfilePictureContainer>
+          <ProfilePictureWrapper>
+            <ProfilePicture src={profileImg} />
+          </ProfilePictureWrapper>
+        </ProfilePictureContainer>
 
-      <ProfileDescriptionContainer>
-        <ProfileDescriptionWrapper>
-          <AboutMeTitleContainer>
-            <AboutMeTitle>About me</AboutMeTitle>
-          </AboutMeTitleContainer>
+        <ProfileDescriptionContainer>
+          <ProfileDescriptionWrapper>
+            <AboutMeTitleContainer>
+              <AboutMeTitle>About me</AboutMeTitle>
+            </AboutMeTitleContainer>
 
-          <ProfileDescriptionBioContainer>
-            <ProfileDescriptionBio>
-              A computer science fresh graduate based in Kuala Lumpur, Malaysia.
-              Armed with a keyboard, conjuring lines of code that dance to the
-              rhythm of innovation while battling synxtax dragons or embarking
-              on epic quests to find the perfect coffee blend.
-            </ProfileDescriptionBio>
-          </ProfileDescriptionBioContainer>
+            <ProfileDescriptionBioContainer>
+              <ProfileDescriptionBio>
+                A computer science fresh graduate based in Kuala Lumpur,
+                Malaysia. Armed with a keyboard, conjuring lines of code that
+                dance to the rhythm of innovation while battling synxtax dragons
+                or embarking on epic quests to find the perfect coffee blend.
+              </ProfileDescriptionBio>
+            </ProfileDescriptionBioContainer>
 
-          <DownloadResumeButton onClick={downloadFile}>
-            Download Resume
-          </DownloadResumeButton>
-        </ProfileDescriptionWrapper>
-      </ProfileDescriptionContainer>
-    </AboutMeContainer>
+            <DownloadResumeButton onClick={downloadFile}>
+              Download Resume
+            </DownloadResumeButton>
+          </ProfileDescriptionWrapper>
+        </ProfileDescriptionContainer>
+      </AboutMeContainer>
+    </Slide>
   );
 };
 
