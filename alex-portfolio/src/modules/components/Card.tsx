@@ -41,6 +41,7 @@ const Card: FC<Experience> = (props) => {
             </CardCompanyDurationText>
           </CardCompanyDurationWrapper>
         </CardInfo>
+        
       </CardHeader>
       <CardBody $showContent={showContent}>
         <CardDescriptionWrapper>

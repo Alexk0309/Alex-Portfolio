@@ -18,11 +18,12 @@ const Experience = () => {
         <ExperienceTitle>Work Experience</ExperienceTitle>
       </ExperienceTitleContainer>
       <ExperienceCardContainer>
-        {experiences?.map((item: Experience) => {
+        {experiences?.map((item: Experience, index: number) => {
           const { title, company, description, startDate, endDate, img, link } =
             item;
           return (
             <ExperienceCard
+              key={index}
               img={img}
               title={title}
               company={company}

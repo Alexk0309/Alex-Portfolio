@@ -2,8 +2,18 @@ import styled from "styled-components";
 import { Paragraph, Title } from "../../components/typography/fonts";
 import profileImg from "../../../assets/images/Profile.jpeg";
 import { StyledButton } from "../../components/Button";
+import resume from "../../../assets/CheahKarSheng.pdf";
 
 const AboutMe = () => {
+  const downloadFile = async () => {
+    const link = document.createElement("a");
+    link.href = resume;
+    link.download = "AlexResume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <AboutMeContainer>
       <ProfilePictureContainer>
@@ -27,7 +37,9 @@ const AboutMe = () => {
             </ProfileDescriptionBio>
           </ProfileDescriptionBioContainer>
 
-          <DownloadResumeButton>Download Resume</DownloadResumeButton>
+          <DownloadResumeButton onClick={downloadFile}>
+            Download Resume
+          </DownloadResumeButton>
         </ProfileDescriptionWrapper>
       </ProfileDescriptionContainer>
     </AboutMeContainer>

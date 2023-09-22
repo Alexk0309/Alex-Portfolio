@@ -14,5 +14,6 @@ export const StyledButton = styled.button`
   width: 220px;
   height: 80px;
   font-size: 20px;
+  
 `;
 export default Button;
