@@ -12,7 +12,7 @@ export interface Experience {
   link: string;
 }
 
-const Card: FC<Experience> = (props) => {
+const ExperienceCard: FC<Experience> = (props) => {
   const { img, title, company, description, startDate, endDate, link } = props;
 
   const [showContent, setShowContent] = useState(false);
@@ -55,7 +55,7 @@ const Card: FC<Experience> = (props) => {
   );
 };
 
-export default Card;
+export default ExperienceCard;
 
 const CardContainer = styled.div`
   display: flex;

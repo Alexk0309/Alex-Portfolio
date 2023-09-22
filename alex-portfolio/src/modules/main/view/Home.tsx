@@ -6,15 +6,16 @@ import {
 } from "../../components/typography/fonts";
 import { StyledButton } from "../../components/Button";
 import VideoBG from "../../components/VideoBg";
+import "../../../index.css";
 
 const Home = () => {
   const findOutMore = () => {
-    const link = document.createElement('a');
-    link.href = "#about-me"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-  }
+    const link = document.createElement("a");
+    link.href = "#about-me";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -23,9 +24,11 @@ const Home = () => {
         <ProfileDescriptionContainer>
           <ProfileDescriptionWrapper>
             <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
-            <ProfileDescriptionTitle>Alex Cheah</ProfileDescriptionTitle>
-            <ProfileDescription>Software Engineer</ProfileDescription>
-            <FindOutMoreButton onClick={findOutMore}>Find Out More</FindOutMoreButton>
+            <ProfileDescriptionTitle id="home-name">Alex Cheah</ProfileDescriptionTitle>
+            <ProfileDescription id="home-role">Software Engineer</ProfileDescription>
+            <FindOutMoreButton onClick={findOutMore}>
+              Find Out More
+            </FindOutMoreButton>
           </ProfileDescriptionWrapper>
         </ProfileDescriptionContainer>
       </HomeContainer>

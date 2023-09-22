@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Title } from "../../components/typography/fonts";
-import Card, { Experience } from "../../components/Card";
+import ExperienceCard, { Experience } from "../../components/ExperienceCard";
 import { useQuery } from "react-query";
 import { getExperiences } from "../../../api";
 import { Slide } from "react-awesome-reveal";
+import "../../../index.css";
 
 const Experience = () => {
   const { data } = useQuery({
@@ -17,9 +18,11 @@ const Experience = () => {
     <Slide direction="right" triggerOnce>
       <ExperienceContainer id="experience">
         <ExperienceTitleContainer>
-          <ExperienceTitle>Work Experience</ExperienceTitle>
+          <ExperienceTitle id="experience-title">
+            Work Experience
+          </ExperienceTitle>
         </ExperienceTitleContainer>
-        <ExperienceCardContainer>
+        <ExperienceCardContainer id="card-container">
           {experiences?.map((item: Experience, index: number) => {
             const {
               title,
@@ -31,7 +34,7 @@ const Experience = () => {
               link,
             } = item;
             return (
-              <ExperienceCard
+              <Card
                 key={index}
                 img={img}
                 title={title}
@@ -74,4 +77,4 @@ const ExperienceCardContainer = styled.div`
   padding-top: 20px;
 `;
 
-const ExperienceCard = styled(Card)``;
+const Card = styled(ExperienceCard)``;
