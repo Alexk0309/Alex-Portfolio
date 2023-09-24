@@ -7,6 +7,8 @@ import {
 import { StyledButton } from "../../components/Button";
 import VideoBG from "../../components/VideoBg";
 import "../../../index.css";
+import { init } from "ityped";
+import { useRef, useEffect } from "react";
 
 const Home = () => {
   const findOutMore = () => {
@@ -16,6 +18,24 @@ const Home = () => {
     link.click();
     document.body.removeChild(link);
   };
+
+  const textRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!textRef.current) {
+      return;
+    }
+    init(textRef.current, {
+      showCursor: false,
+      strings: [
+        "Fresh Graduate",
+        "Software Engineer",
+        "Fullstack Engineer",
+        "Frontend Engineer",
+        "Backend Engineer",
+      ],
+    });
+  }, []);
 
   return (
     <>
@@ -28,7 +48,7 @@ const Home = () => {
               Alex Cheah
             </ProfileDescriptionTitle>
             <ProfileDescription id="home-role">
-              Software Engineer
+              <span ref={textRef} />
             </ProfileDescription>
             <FindOutMoreButton onClick={findOutMore}>
               Find Out More
