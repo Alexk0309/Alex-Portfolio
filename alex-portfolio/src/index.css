@@ -72,3 +72,38 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@media only screen and (max-width: 1250px) {
+  #home-name {
+    font-size: 50px;
+  }
+  #home-role {
+    font-size: 30px;
+  }
+  #about-me {
+    flex-direction: column;
+    height: auto;
+  }
+  #about-me-title {
+    display: none;
+  }
+  #profile-desc {
+    align-items: center;
+  }
+  #profile-picture {
+    margin-bottom: 10px;
+  }
+  #profile-desc-bio{
+    width: 400px;
+    font-size: 20px;
+  }
+  #projects-title {
+    font-size: 50px;
+  }
+  #experience-title {
+    font-size: 50px;
+  }
+  #card-container {
+    grid-template-columns: 1fr;
+  }
+}
