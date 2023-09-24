@@ -24,8 +24,12 @@ const Home = () => {
         <ProfileDescriptionContainer>
           <ProfileDescriptionWrapper>
             <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
-            <ProfileDescriptionTitle id="home-name">Alex Cheah</ProfileDescriptionTitle>
-            <ProfileDescription id="home-role">Software Engineer</ProfileDescription>
+            <ProfileDescriptionTitle id="home-name">
+              Alex Cheah
+            </ProfileDescriptionTitle>
+            <ProfileDescription id="home-role">
+              Software Engineer
+            </ProfileDescription>
             <FindOutMoreButton onClick={findOutMore}>
               Find Out More
             </FindOutMoreButton>

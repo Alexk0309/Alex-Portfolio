@@ -18,19 +18,19 @@ const AboutMe = () => {
   return (
     <Slide direction="right" triggerOnce>
       <AboutMeContainer id="about-me">
-        <ProfilePictureContainer>
+        <ProfilePictureContainer id="profile-picture">
           <ProfilePictureWrapper>
             <ProfilePicture src={profileImg} />
           </ProfilePictureWrapper>
         </ProfilePictureContainer>
 
         <ProfileDescriptionContainer>
-          <ProfileDescriptionWrapper>
+          <ProfileDescriptionWrapper id="profile-desc">
             <AboutMeTitleContainer>
-              <AboutMeTitle>About me</AboutMeTitle>
+              <AboutMeTitle id="about-me-title">About me</AboutMeTitle>
             </AboutMeTitleContainer>
 
-            <ProfileDescriptionBioContainer>
+            <ProfileDescriptionBioContainer id="profile-desc-bio">
               <ProfileDescriptionBio>
                 A computer science fresh graduate based in Kuala Lumpur,
                 Malaysia. Armed with a keyboard, conjuring lines of code that
