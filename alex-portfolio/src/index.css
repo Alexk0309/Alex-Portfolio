@@ -106,4 +106,10 @@ button:focus-visible {
   #card-container {
     grid-template-columns: 1fr;
   }
+  #nav-bar-link {
+    font-size: 20px;
+  }
+  #nav-bar-link:hover {
+    font-size: 20px;
+  }
 }
