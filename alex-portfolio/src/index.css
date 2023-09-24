@@ -74,11 +74,17 @@ button:focus-visible {
 }
 
 @media only screen and (max-width: 1250px) {
+  #home-intro {
+    font-size: 20px;
+  }
   #home-name {
-    font-size: 50px;
+    font-size: 30px;
+  }
+  #find-out-more-btn {
+    margin-right: 20px;
   }
   #home-role {
-    font-size: 30px;
+    font-size: 20px;
   }
   #about-me {
     flex-direction: column;
@@ -94,7 +100,7 @@ button:focus-visible {
     margin-bottom: 10px;
   }
   #profile-desc-bio{
-    width: 400px;
+    width: 350px;
     font-size: 20px;
   }
   #projects-title {

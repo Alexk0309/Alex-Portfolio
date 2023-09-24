@@ -43,14 +43,14 @@ const Home = () => {
       <HomeContainer>
         <ProfileDescriptionContainer>
           <ProfileDescriptionWrapper>
-            <ProfileDescriptionIntro>Hi There, I'm</ProfileDescriptionIntro>
+            <ProfileDescriptionIntro id="home-intro">Hi There, I'm</ProfileDescriptionIntro>
             <ProfileDescriptionTitle id="home-name">
               Alex Cheah
             </ProfileDescriptionTitle>
             <ProfileDescription id="home-role">
               <span ref={textRef} />
             </ProfileDescription>
-            <FindOutMoreButton onClick={findOutMore}>
+            <FindOutMoreButton onClick={findOutMore} id="find-out-more-btn">
               Find Out More
             </FindOutMoreButton>
           </ProfileDescriptionWrapper>
