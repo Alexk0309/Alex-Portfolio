@@ -13,10 +13,6 @@ const navigation = [
     title: "EXPERIENCE",
     link: "#experience",
   },
-  {
-    title: "CONTACT",
-    link: "#contact",
-  },
 ];
 
 const NavBar = () => {
