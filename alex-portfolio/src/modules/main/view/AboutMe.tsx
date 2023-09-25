@@ -1,9 +1,15 @@
 import styled from "styled-components";
-import { Paragraph, Title } from "../../components/typography/fonts";
+import {
+  Paragraph,
+  ParagraphLarge,
+  Title,
+} from "../../components/typography/fonts";
 import profileImg from "../../../assets/images/Profile.jpeg";
 import { StyledButton } from "../../components/Button";
 import resume from "../../../assets/CheahKarSheng.pdf";
 import { Slide } from "react-awesome-reveal";
+import { init } from "ityped";
+import { useRef, useEffect } from "react";
 
 const AboutMe = () => {
   const downloadFile = async () => {
@@ -14,6 +20,24 @@ const AboutMe = () => {
     link.click();
     document.body.removeChild(link);
   };
+
+  const textRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!textRef.current) {
+      return;
+    }
+    init(textRef.current, {
+      showCursor: true,
+      strings: [
+        "Fresh Graduate",
+        "Software Engineer",
+        "Fullstack Engineer",
+        "Frontend Engineer",
+        "Backend Engineer",
+      ],
+    });
+  }, []);
 
   return (
     <Slide direction="right" triggerOnce>
@@ -27,7 +51,12 @@ const AboutMe = () => {
         <ProfileDescriptionContainer>
           <ProfileDescriptionWrapper id="profile-desc">
             <AboutMeTitleContainer>
-              <AboutMeTitle id="about-me-title">About me</AboutMeTitle>
+              <ProfileDescriptionTitle id="about-me-title">
+                Alex Cheah{" "}
+              </ProfileDescriptionTitle>
+              <ProfileDescription id="about-me-role">
+                A <ProfileDescriptionTitleSpan ref={textRef} />
+              </ProfileDescription>
             </AboutMeTitleContainer>
 
             <ProfileDescriptionBioContainer id="profile-desc-bio">
@@ -58,7 +87,7 @@ const AboutMeContainer = styled.div`
   height: 700px;
 
   align-items: center;
-  padding-top: 10%;
+  padding-top: 5px;
 `;
 
 const ProfilePictureContainer = styled.div`
@@ -79,7 +108,9 @@ const ProfilePictureWrapper = styled.div`
 
 const ProfilePicture = styled.img`
   width: 100%;
-  border-radius: 40px;
+  margin-bottom: 50px;
+  border-radius: 50px;
+  box-shadow: 15px 15px 40px 1px #a782ff;
 `;
 
 const ProfileDescriptionContainer = styled.div`
@@ -111,10 +142,17 @@ const ProfileDescriptionBio = styled(Paragraph)`
 
 const AboutMeTitleContainer = styled.div``;
 
-const AboutMeTitle = styled(Title)`
-  font-size: 100px;
-`;
-
 const DownloadResumeButton = styled(StyledButton)`
   margin-top: 50px;
 `;
+
+const ProfileDescriptionTitle = styled(Title)`
+  font-size: 100px;
+  padding-bottom: 10px;
+`;
+
+const ProfileDescriptionTitleSpan = styled.span`
+  color: #a782ff;
+`;
+
+const ProfileDescription = styled(ParagraphLarge)``;

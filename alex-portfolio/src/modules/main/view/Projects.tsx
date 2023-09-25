@@ -16,7 +16,10 @@ const Projects = () => {
     <ProjectsContainer id="projects">
       <Slide triggerOnce>
         <ProjectsTitleContainer>
-          <ProjectsTitle id="projects-title">Projects</ProjectsTitle>
+          <ProjectsTitle id="projects-title">
+            <ProjectTitleSpan>{"<"}</ProjectTitleSpan>Projects 
+            <ProjectTitleSpan>{" />"}</ProjectTitleSpan>
+          </ProjectsTitle>
         </ProjectsTitleContainer>
         <ProjectsCardContainer id="card-container">
           {projects?.map((item: Projects, index: number) => {
@@ -47,7 +50,7 @@ const ProjectsContainer = styled.div`
   height: 100%;
   padding-top: 7%;
   padding-bottom: 20%;
-  background-color: #111010;
+  background-color: #1d1919;
 `;
 
 const ProjectsTitleContainer = styled.div`
@@ -57,6 +60,10 @@ const ProjectsTitleContainer = styled.div`
 
 const ProjectsTitle = styled(Title)`
   font-size: 100px;
+`;
+
+const ProjectTitleSpan = styled.span`
+  color: #8b8b8b;
 `;
 
 const ProjectsCardContainer = styled.div`

@@ -19,7 +19,8 @@ const Experience = () => {
       <ExperienceContainer id="experience">
         <ExperienceTitleContainer>
           <ExperienceTitle id="experience-title">
-            Work Experience
+            <ExperienceTitleSpan>{"<"}</ExperienceTitleSpan>Experience
+            <ExperienceTitleSpan>{" />"}</ExperienceTitleSpan>
           </ExperienceTitle>
         </ExperienceTitleContainer>
         <ExperienceCardContainer id="card-container">
@@ -68,6 +69,10 @@ const ExperienceTitleContainer = styled.div`
 
 const ExperienceTitle = styled(Title)`
   font-size: 100px;
+`;
+
+const ExperienceTitleSpan = styled.span`
+  color: #8b8b8b;
 `;
 
 const ExperienceCardContainer = styled.div`

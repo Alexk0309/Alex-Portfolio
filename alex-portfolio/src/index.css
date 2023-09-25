@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
+  background-color: #1d1919;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,7 +23,7 @@ a {
 }
 
 #nav-bar-link:hover {
-  font-size: 40px;
+  color: #a782ff;
   transition: 0.2s;
 }
 
@@ -39,7 +39,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  border-color: #ffffff;
+  border-color: #a782ff;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -51,7 +51,7 @@ button {
 
 button:hover {
   color: rgb(0, 0, 0);
-  background-color: #fbfaff;
+  background-color: #a782ff;
   transition: 0.2s;
 }
 
@@ -92,6 +92,9 @@ button:focus-visible {
   }
   #about-me-title {
     display: none;
+  }
+  #about-me-role {
+    font-size: 35px;
   }
   #profile-desc {
     align-items: center;
