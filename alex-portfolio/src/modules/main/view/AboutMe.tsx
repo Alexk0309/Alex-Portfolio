@@ -4,7 +4,7 @@ import {
   ParagraphLarge,
   Title,
 } from "../../components/typography/fonts";
-import profileImg from "../../../assets/images/Profile.jpeg";
+import profileImg from "../../../assets/images/profile.jpeg";
 import { StyledButton } from "../../components/Button";
 import resume from "../../../assets/CheahKarSheng.pdf";
 import { Slide } from "react-awesome-reveal";
