@@ -30,9 +30,9 @@ const ProjectsCard: FC<Projects> = (props) => {
           <CardTitle>
             <CardTitleText>{title}</CardTitleText>
           </CardTitle>
-          <CardCompany>
-            <CardCompanyText>{info}</CardCompanyText>
-          </CardCompany>
+          <CardInfoTextWrapper>
+            <CardInfoText>{info}</CardInfoText>
+          </CardInfoTextWrapper>
         </CardInfo>
       </CardHeader>
       <CardBody $showContent={showContent}>
@@ -64,7 +64,7 @@ const CardHeader = styled.div`
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
 
-  background-color: #1c1c1c;
+  background-color: #2d2727;
 
   transition: all 0.2s;
 
@@ -96,10 +96,11 @@ const CardTitleText = styled(Paragraph)`
   margin: 0;
 `;
 
-const CardCompany = styled.div``;
+const CardInfoTextWrapper = styled.div``;
 
-const CardCompanyText = styled.p`
+const CardInfoText = styled.p`
   margin: 0;
+  color: #bc9fff;
 `;
 
 const CardBody = styled.div<{ $showContent?: boolean }>`
@@ -109,7 +110,7 @@ const CardBody = styled.div<{ $showContent?: boolean }>`
   position: relative;
   padding: 10px;
 
-  background-color: #1c1c1c;
+  background-color: #2d2727;
 
   max-height: ${({ $showContent }) => ($showContent ? "500px" : 0)};
   bottom: 7px;
@@ -143,6 +144,6 @@ const LearnMoreLink = styled.a`
   cursor: pointer;
 
   &:hover {
-    color: #c9c9c9;
+    color: #a782ff;
   }
 `;
