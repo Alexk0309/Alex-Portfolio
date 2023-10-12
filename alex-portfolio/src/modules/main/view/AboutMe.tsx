@@ -69,7 +69,7 @@ const AboutMe = () => {
             </ProfileDescriptionBioContainer>
 
             <DownloadResumeButton onClick={downloadFile}>
-              Download Resume
+              Download to know more
             </DownloadResumeButton>
           </ProfileDescriptionWrapper>
         </ProfileDescriptionContainer>
