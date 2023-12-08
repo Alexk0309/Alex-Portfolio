@@ -2,17 +2,18 @@ import { FC, useState } from "react";
 import styled from "styled-components";
 import { Paragraph } from "./typography/fonts";
 
-export interface Projects {
+export interface IProjects {
   img: string;
   title: string;
   info: string;
   description: string;
   link?: string;
+  tools: string;
 }
 
-const ProjectsCard: FC<Projects> = (props) => {
-  const { img, title, info, description, link } = props;
-
+const ProjectsCard: FC<IProjects> = (props) => {
+  const { img, title, info, description, link, tools } = props;
+  const toolsArr = tools.split(",");
   const [showContent, setShowContent] = useState(false);
 
   const handleShow = () => {
@@ -30,15 +31,28 @@ const ProjectsCard: FC<Projects> = (props) => {
           <CardTitle>
             <CardTitleText>{title}</CardTitleText>
           </CardTitle>
+
           <CardInfoTextWrapper>
             <CardInfoText>{info}</CardInfoText>
           </CardInfoTextWrapper>
         </CardInfo>
       </CardHeader>
+
       <CardBody $showContent={showContent}>
         <CardDescriptionWrapper>
           <CardDescriptionText>{description}</CardDescriptionText>
         </CardDescriptionWrapper>
+
+        <CardToolsContainer>
+          {toolsArr.map((tool) => {
+            return (
+              <CardToolWrapper>
+                <CardTool>{tool}</CardTool>
+              </CardToolWrapper>
+            );
+          })}
+        </CardToolsContainer>
+
         <LearnMoreLinkWrapper>
           <LearnMoreLink href={link} target="_blank">
             Learn more
@@ -64,7 +78,7 @@ const CardHeader = styled.div`
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
 
-  background-color: #2d2727;
+  background-color: rgb(49, 48, 77);
 
   transition: all 0.2s;
 
@@ -110,7 +124,7 @@ const CardBody = styled.div<{ $showContent?: boolean }>`
   position: relative;
   padding: 10px;
 
-  background-color: #2d2727;
+  background-color: rgb(49, 48, 77);
 
   max-height: ${({ $showContent }) => ($showContent ? "500px" : 0)};
   bottom: 7px;
@@ -130,6 +144,31 @@ const CardDescriptionText = styled(Paragraph)`
   word-wrap: break-word;
   margin: 0;
   margin-right: 10px;
+`;
+
+export const CardToolsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 25px;
+  gap: 8px;
+`;
+
+export const CardToolWrapper = styled.div`
+  width: fit-content;
+  margin-top: 5px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10%;
+  background-color: rgba(40, 39, 64, 0.695);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(60, 59, 98, 0.777);
+  }
+`;
+
+export const CardTool = styled.p`
+  margin: 0;
+  color: #ffffff;
 `;
 
 const LearnMoreLinkWrapper = styled.div`

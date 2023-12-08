@@ -1,8 +1,9 @@
 import { FC, useState } from "react";
 import styled from "styled-components";
 import { Paragraph } from "./typography/fonts";
+import { CardToolsContainer, CardToolWrapper, CardTool } from "./ProjectsCard";
 
-export interface Experience {
+export interface IExperience {
   img: string;
   title: string;
   company: string;
@@ -10,11 +11,14 @@ export interface Experience {
   startDate: string;
   endDate: string;
   link: string;
+  tools: string;
 }
 
-const ExperienceCard: FC<Experience> = (props) => {
-  const { img, title, company, description, startDate, endDate, link } = props;
+const ExperienceCard: FC<IExperience> = (props) => {
+  const { img, title, company, description, startDate, endDate, link, tools } =
+    props;
 
+  const toolsArr = tools.split(",");
   const [showContent, setShowContent] = useState(false);
 
   const handleShow = () => {
@@ -41,14 +45,27 @@ const ExperienceCard: FC<Experience> = (props) => {
             </CardCompanyDurationText>
           </CardCompanyDurationWrapper>
         </CardInfo>
-        
       </CardHeader>
+
       <CardBody $showContent={showContent}>
         <CardDescriptionWrapper>
           <CardDescriptionText>{description}</CardDescriptionText>
         </CardDescriptionWrapper>
+
+        <CardToolsContainer>
+          {toolsArr.map((tool) => {
+            return (
+              <CardToolWrapper>
+                <CardTool>{tool}</CardTool>
+              </CardToolWrapper>
+            );
+          })}
+        </CardToolsContainer>
+
         <LearnMoreLinkWrapper>
-          <LearnMoreLink href={link} target="_blank">Learn more</LearnMoreLink>
+          <LearnMoreLink href={link} target="_blank">
+            Learn more
+          </LearnMoreLink>
         </LearnMoreLinkWrapper>
       </CardBody>
     </CardContainer>
@@ -70,7 +87,7 @@ const CardHeader = styled.div`
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
 
-  background-color: #2d2727;
+  background-color: rgb(49, 48, 77);
 
   transition: all 0.2s;
 
@@ -123,7 +140,7 @@ const CardBody = styled.div<{ $showContent?: boolean }>`
   position: relative;
   padding: 10px;
 
-  background-color: #2d2727;
+  background-color: rgb(49, 48, 77);
 
   max-height: ${({ $showContent }) => ($showContent ? "500px" : 0)};
   bottom: 7px;

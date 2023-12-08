@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Title } from "../../components/typography/fonts";
-import ExperienceCard, { Experience } from "../../components/ExperienceCard";
+import ExperienceCard, { IExperience } from "../../components/ExperienceCard";
 import { useQuery } from "react-query";
 import { getExperiences } from "../../../api";
 import { Slide } from "react-awesome-reveal";
@@ -24,7 +24,7 @@ const Experience = () => {
           </ExperienceTitle>
         </ExperienceTitleContainer>
         <ExperienceCardContainer id="card-container">
-          {experiences?.map((item: Experience, index: number) => {
+          {experiences?.map((item: IExperience, index: number) => {
             const {
               title,
               company,
@@ -33,6 +33,7 @@ const Experience = () => {
               endDate,
               img,
               link,
+              tools
             } = item;
             return (
               <Card
@@ -44,6 +45,7 @@ const Experience = () => {
                 startDate={startDate}
                 endDate={endDate}
                 link={link}
+                tools={tools}
               />
             );
           })}

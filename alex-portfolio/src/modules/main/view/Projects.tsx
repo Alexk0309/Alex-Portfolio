@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Title } from "../../components/typography/fonts";
 import { Slide } from "react-awesome-reveal";
 import "../../../index.css";
-import ProjectsCard, { Projects } from "../../components/ProjectsCard";
+import ProjectsCard, { IProjects } from "../../components/ProjectsCard";
 import { useQuery } from "react-query";
 import { getProjects } from "../../../api";
 
@@ -22,8 +22,8 @@ const Projects = () => {
           </ProjectsTitle>
         </ProjectsTitleContainer>
         <ProjectsCardContainer id="card-container">
-          {projects?.map((item: Projects, index: number) => {
-            const { img, title, info, description, link } = item;
+          {projects?.map((item: IProjects, index: number) => {
+            const { img, title, info, description, link, tools } = item;
             return (
               <Card
                 key={index}
@@ -32,6 +32,7 @@ const Projects = () => {
                 info={info}
                 description={description}
                 link={link}
+                tools={tools}
               />
             );
           })}
@@ -50,7 +51,6 @@ const ProjectsContainer = styled.div`
   height: 100%;
   padding-top: 7%;
   padding-bottom: 20%;
-  background-color: #1d1919;
 `;
 
 const ProjectsTitleContainer = styled.div`
