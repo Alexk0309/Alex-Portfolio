@@ -5,7 +5,7 @@ export const getExperiences = () => {
     method: "GET",
     url: "https://api.baserow.io/api/database/rows/table/198227/?user_field_names=true&order_by=-Id",
     headers: {
-      Authorization: "Token RXs712WtiO9EHAvftdOlt0YQKWTUus4E",
+      Authorization: `Token ${import.meta.env.VITE_EXPERIENCES_TOKEN}`,
     },
   })
     .then(({ data }) => data)
@@ -17,7 +17,7 @@ export const getProjects = () => {
     method: "GET",
     url: "https://api.baserow.io/api/database/rows/table/189547/?user_field_names=true&order_by=-Id",
     headers: {
-      Authorization: "Token RXs712WtiO9EHAvftdOlt0YQKWTUus4E",
+      Authorization: `Token ${import.meta.env.VITE_PROJECTS_TOKEN}`,
     },
   })
     .then(({ data }) => data)
