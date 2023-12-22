@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Title } from "../../components/typography/fonts";
 import { Slide } from "react-awesome-reveal";
 import "../../../index.css";
 import ProjectsCard, { IProjects } from "../../components/ProjectsCard";
 import { useQuery } from "react-query";
 import { getProjects } from "../../../api";
+import SectionTitle from "../../components/SectionTitle";
 
 const Projects = () => {
   const { data } = useQuery({
@@ -15,12 +15,7 @@ const Projects = () => {
   return (
     <ProjectsContainer id="projects">
       <Slide triggerOnce>
-        <ProjectsTitleContainer>
-          <ProjectsTitle id="projects-title">
-            <ProjectTitleSpan>{"<"}</ProjectTitleSpan>Projects 
-            <ProjectTitleSpan>{" />"}</ProjectTitleSpan>
-          </ProjectsTitle>
-        </ProjectsTitleContainer>
+        <SectionTitle>Projects</SectionTitle>
         <ProjectsCardContainer id="card-container">
           {projects?.map((item: IProjects, index: number) => {
             const { img, title, info, description, link, tools } = item;
@@ -51,19 +46,6 @@ const ProjectsContainer = styled.div`
   height: 100%;
   padding-top: 7%;
   padding-bottom: 20%;
-`;
-
-const ProjectsTitleContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const ProjectsTitle = styled(Title)`
-  font-size: 100px;
-`;
-
-const ProjectTitleSpan = styled.span`
-  color: #8b8b8b;
 `;
 
 const ProjectsCardContainer = styled.div`
