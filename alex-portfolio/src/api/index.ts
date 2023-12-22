@@ -23,3 +23,5 @@ export const getProjects = () => {
     .then(({ data }) => data)
     .catch((err) => console.log(err));
 };
+
+export const CONTACT_FORM_API = "https://formie.dev/form/868ed042-014a-4c32-82d0-6bbb061354a7";

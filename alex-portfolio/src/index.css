@@ -117,4 +117,9 @@ button:focus-visible {
   #nav-bar-link:hover {
     font-size: 20px;
   }
+  #contact-form {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 500px;
+  }
 }

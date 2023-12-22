@@ -56,8 +56,9 @@ const ExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
-  height: 800px;
+  padding-top: 7%;
+  padding-bottom: 20%;
+  height: fit-content;
 `;
 
 const ExperienceCardContainer = styled.div`

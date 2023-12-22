@@ -43,7 +43,7 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  height: fit-content;
   padding-top: 7%;
   padding-bottom: 20%;
 `;
