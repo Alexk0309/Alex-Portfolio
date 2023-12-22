@@ -3,10 +3,19 @@ import styled from "styled-components";
 import SectionTitle from "../../components/SectionTitle";
 import { CONTACT_FORM_API } from "../../../api";
 import "../../../index.css";
+import { useState } from "react";
 
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const handleSubmit = () => {
-    alert("Your form was successfully submitted");
+    if (
+      (email.length !== 0 || email !== "") &&
+      (message.trim().length !== 0 || message !== "")
+    ) {
+      alert("Your form was successfully submitted");
+    } else return;
   };
   return (
     <ContactContainer id="contact">
@@ -23,14 +32,20 @@ const Contact = () => {
                 name="Email"
                 id="email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
+                required
               />
             </ContactInputContainer>
             <ContactTextAreaContainer>
               <ContactTextArea
                 name="Message"
                 id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Message"
+                required
               />
             </ContactTextAreaContainer>
             <ContactButton type="submit" onClick={handleSubmit}>
