@@ -34,3 +34,20 @@
   object-position: 0px -90px;
   filter: blur(5px);
 }
+
+@media only screen and (max-width: 1250px) {
+  .nav-bar-items {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+    background-color: #000000;
+    bottom: -550px;
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
