@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Title } from "../../components/typography/fonts";
 import ExperienceCard, { IExperience } from "../../components/ExperienceCard";
 import { useQuery } from "react-query";
 import { getExperiences } from "../../../api";
 import { Slide } from "react-awesome-reveal";
 import "../../../index.css";
+import SectionTitle from "../../components/SectionTitle";
 
 const Experience = () => {
   const { data } = useQuery({
@@ -17,12 +17,7 @@ const Experience = () => {
   return (
     <Slide direction="right" triggerOnce>
       <ExperienceContainer id="experience">
-        <ExperienceTitleContainer>
-          <ExperienceTitle id="experience-title">
-            <ExperienceTitleSpan>{"<"}</ExperienceTitleSpan>Experience
-            <ExperienceTitleSpan>{" />"}</ExperienceTitleSpan>
-          </ExperienceTitle>
-        </ExperienceTitleContainer>
+        <SectionTitle>Experience</SectionTitle>
         <ExperienceCardContainer id="card-container">
           {experiences?.map((item: IExperience, index: number) => {
             const {
@@ -33,7 +28,7 @@ const Experience = () => {
               endDate,
               img,
               link,
-              tools
+              tools,
             } = item;
             return (
               <Card
@@ -61,20 +56,9 @@ const ExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
-  height: 800px;
-`;
-
-const ExperienceTitleContainer = styled.div`
-  padding-top: 50px;
-`;
-
-const ExperienceTitle = styled(Title)`
-  font-size: 100px;
-`;
-
-const ExperienceTitleSpan = styled.span`
-  color: #8b8b8b;
+  padding-top: 7%;
+  padding-bottom: 20%;
+  height: fit-content;
 `;
 
 const ExperienceCardContainer = styled.div`
