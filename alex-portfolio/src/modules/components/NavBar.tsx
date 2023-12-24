@@ -44,7 +44,7 @@ const NavBar = () => {
       <NavBarItemsContainer $showNavBar={showNavbar}>
         {navigation.map((item, index) => (
           <div key={index} className="nav-bar-item">
-            <a id="nav-bar-link" href={item.link}>
+            <a id="nav-bar-link" onClick={handleNavBar} href={item.link}>
               {item.title}
             </a>
           </div>
@@ -62,10 +62,11 @@ const NavBarButtonContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+  background-color: rgb(14, 13, 22);
 
   &:hover {
     cursor: pointer;
-    background-color: #181818;
+    background-color: rgb(19, 18, 30);
   }
 
   @media only screen and (max-width: 1250px) {
@@ -77,7 +78,7 @@ const NavBarItemsContainer = styled.div<{ $showNavBar: boolean }>`
   display: flex;
   height: 30px;
   flex-direction: row;
-  transition: bottom 0.5s ease;
+  transition: bottom 0.3s ease;
 
   @media only screen and (max-width: 1250px) {
     display: flex;
@@ -87,7 +88,7 @@ const NavBarItemsContainer = styled.div<{ $showNavBar: boolean }>`
     align-items: center;
     height: 500px;
     width: 100%;
-    background-color: #000000;
+    background-color: rgb(14, 13, 22);
     bottom: ${(props) => (props.$showNavBar ? "-500px" : 0)};
     gap: 30px;
     padding-top: 30px;
