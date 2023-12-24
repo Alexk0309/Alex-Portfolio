@@ -98,7 +98,7 @@ const ContactTextAreaContainer = styled.div`
 
 const ContactInput = styled.input`
   height: 100%;
-  background-color: #303245;
+  background-color: #15161e;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
@@ -113,7 +113,7 @@ const ContactTextArea = styled.textarea`
   height: 200px;
   width: 100%;
   resize: vertical;
-  background-color: #303245;
+  background-color: #15161e;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
