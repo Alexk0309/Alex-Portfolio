@@ -23,10 +23,10 @@ const Contact = () => {
     ) {
       emailjs
         .sendForm(
-          "gmail_test",
-          "template_6b66i3c",
+          "portfolio_mail",
+          "template_ib7tr58",
           e.currentTarget,
-          "bvv1E2jxnCk5VzSS0"
+          "sDqoPYI-T5Spdw0fP"
         )
         .then(
           () => {
