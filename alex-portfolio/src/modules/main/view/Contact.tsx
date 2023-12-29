@@ -1,24 +1,57 @@
 import { Slide } from "react-awesome-reveal";
 import styled from "styled-components";
 import SectionTitle from "../../components/SectionTitle";
-import { CONTACT_FORM_API } from "../../../api";
+// import { CONTACT_FORM_API } from "../../../api";
 import "../../../index.css";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     if (
       email.match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       ) &&
+      (name.trim().length !== 0 || name !== "") &&
       (message.trim().length !== 0 || message !== "")
     ) {
-      alert("Your form was successfully submitted");
+      emailjs
+        .sendForm(
+          "gmail_test",
+          "template_6b66i3c",
+          e.currentTarget,
+          "bvv1E2jxnCk5VzSS0"
+        )
+        .then(
+          () => {
+            alert("Your form was successfully submitted");
+            setEmail("");
+            setName("");
+            setMessage("");
+          },
+          (error) => {
+            alert(error.text);
+          }
+        );
     } else return;
   };
+
+  // const handleSubmit = () => {
+  //   if (
+  //     email.match(
+  //       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  //     ) &&
+  //     (message.trim().length !== 0 || message !== "")
+  //   ) {
+  //     alert("Your form was successfully submitted");
+  //   } else return;
+  // };
   return (
     <ContactContainer id="contact">
       <Slide direction="left" triggerOnce>
@@ -26,12 +59,13 @@ const Contact = () => {
         <ContactFormContainer>
           <ContactForm
             id="contact-form"
-            action={CONTACT_FORM_API}
-            method="post"
+            onSubmit={handleSubmit}
+            // action={CONTACT_FORM_API}
+            // method="post"
           >
             <ContactInputContainer>
               <ContactInput
-                name="Email"
+                name="email"
                 id="email"
                 type="email"
                 value={email}
@@ -40,9 +74,20 @@ const Contact = () => {
                 required
               />
             </ContactInputContainer>
+            <ContactInputContainer>
+              <ContactInput
+                name="name"
+                id="name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name"
+                required
+              />
+            </ContactInputContainer>
             <ContactTextAreaContainer>
               <ContactTextArea
-                name="Message"
+                name="message"
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -50,9 +95,7 @@ const Contact = () => {
                 required
               />
             </ContactTextAreaContainer>
-            <ContactButton type="submit" onClick={handleSubmit}>
-              Submit
-            </ContactButton>
+            <ContactButton type="submit">Submit</ContactButton>
           </ContactForm>
         </ContactFormContainer>
       </Slide>
